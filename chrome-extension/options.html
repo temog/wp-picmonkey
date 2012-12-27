@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PicMonkey > WordPress Options</title>
+<style type="text/css">
+	label[for="image_type_jpg"],
+	label[for="image_type_png"]
+	{
+		cursor:pointer;
+	}
+
+    .main {
+        font-size:16px;
+        text-align:left;
+        margin-right:auto;
+        margin-left:auto;
+        padding:10px;
+        width:600px;
+        border:1px solid #cccccc;
+    }
+    .desc {
+        width:250px;
+        float:left;
+        padding:5px;
+        font-size:12px;
+        color:#333333;
+        margin-bottom:15px;
+    }
+    .desc span {
+        color:red;
+        font-weight:bold;
+    }
+    .value {
+        width:330px;
+        float:left;
+        margin-bottom:15px;
+        padding:5px;
+    }
+    .value input[type="text"] {
+        border:1px solid #dddddd;
+        width:99%;
+        height:20px;
+    }
+    .label {
+        border-right:1px solid #cccccc;
+        border-bottom:1px solid #cccccc;
+        background-color:#e2eef7;
+        padding: 5px;
+    }
+    .button {
+        float:left;
+        width:350px;
+        height:50px;
+        padding:5px;
+        border-right:1px solid #bbbbbb;
+        border-bottom:1px solid #bbbbbb;
+        border-top:1px solid #cccccc;
+        border-left:1px solid #cccccc;
+        -webkit-border-radius: 10px;
+        background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc));
+    }
+
+    .button:hover {
+        color: HighlightText;
+        background-color: Highlight;
+        cursor: pointer;
+        background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e2eef7));
+    }
+    .button * {
+        vertical-align:middle;
+    }
+    .del {
+        float:right;
+        text-align:center;
+		line-height:60px;
+        width:200px;
+        margin-left:20px;
+    }
+    #err {
+        display:none;
+        padding:10px;
+        margin-top:10px;
+        border:2px solid red;
+        color:red;
+        -webkit-border-radius: 10px;
+    }
+    #success {
+        display:none;
+        padding:10px;
+        margin-top:10px;
+        border:2px solid green;
+        color:green;
+        -webkit-border-radius: 10px;
+    }
+    br {
+        clear:both;
+    }
+</style>
+<script type="text/javascript" src="jquery.1.7.js"></script>
+<script type="text/javascript" src="options.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="label">PicMonkey API Key</div>
+        <div class="desc">
+			please enter your PicMonkey API Key
+            <span>(required)</span>
+        </div>
+        <div class="value"><input id="picnik_api_key" type="text"></div>
+        <br>
+
+        <div class="label">callback URL</div>
+        <div class="desc">
+			please enter the callback url of wordpress
+            <span>(required)</span>
+        </div>
+        <div class="value"><input id="export" type="text" placeholder="http://your_wordpress_domain/wp-admin/upload.php"></div>
+        <br>
+
+        <div class="label">Image Type selected in the default</div>
+        <div class="desc">
+			select jpg or png
+        </div>
+        <div class="value">
+            <input id="image_type_jpg" type="radio" name="image_type" value="jpg">
+			<label for="image_type_jpg">jpg</label>
+
+            <input id="image_type_png" type="radio" name="image_type" value="png">
+			<label for="image_type_png">png</label>
+        </div>
+        <br>
+
+        <div class="label">image quality</div>
+        <div class="desc">
+			This option is available only if you select the jpg
+        </div>
+        <div class="value">
+            <select id="quality">
+                <option value="10">10</option>
+                <option value="9">9</option>
+                <option value="8">8</option>
+                <option value="7">7</option>
+                <option value="6">6</option>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+            </select>
+        </div>
+        <br>
+        
+        <div id="saveOptions" class="button">
+            <img src="icon_48x48.png">
+            <span style="margin-left:80px">save settings</span>
+        </div>
+        <div id="deleteOptions" class="button del">
+			initialize settings
+        </div>
+        <br>
+
+        <div id="success"></div>
+        <div id="err"></div>
+    </div>
+</body>
+</html>

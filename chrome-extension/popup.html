@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<title>wpPicMonkey</title>
+<script type="text/javascript" src="jquery.1.7.js"></script>
+<script type="text/javascript" src="popup.js"></script>
+<style type="text/css">
+a {
+	text-decoration:underline;
+	color:blue;
+	cursor:pointer;
+}
+body {
+    background-color: #FFFFFF;
+    font-size: 12px;
+    color: #333;
+    width:220px;
+}
+
+#file_name {
+    border:1px solid #e0e0e0;
+    width:180px;
+}
+
+#qlabel {
+    display:block;
+    background-color:#e2eef7;
+    font-size:12px;
+    font-weight:bold;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 2px 0px 2px 5px;
+
+}
+
+#quality {
+    display:block;
+}
+
+#err {
+    display:none;
+    padding:5px;
+    margin-top:5px;
+    border:2px solid red;
+    color:red;
+    -webkit-border-radius: 5px;
+}
+
+#right {
+    width:200px;
+    float:right;
+    display:none;
+}
+
+
+.label {
+    background-color:#e2eef7;
+    font-size:12px;
+    font-weight:bold;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 2px 0px 2px 5px;
+}
+
+.value {
+    margin-bottom:5px;
+}
+
+.selectableItem:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e2eef7));
+    cursor: pointer;
+}
+
+.popupItem {
+    height: 35px;
+    padding: 2px 6px;
+    margin: 1px;
+    white-space: nowrap;
+    cursor: default;
+    border:1px solid #cccccc;
+	text-align:center;
+    -webkit-border-radius: 5px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc));
+}
+.popupItem * { 
+    vertical-align: middle; 
+}
+
+.loading{
+    height: 35px;
+    padding: 2px 6px;
+    margin: 1px;
+    white-space: nowrap;
+    cursor: default;
+    border:1px solid #cccccc;
+    -webkit-border-radius: 5px;
+}
+
+.movepicnik {
+    border-bottom:1px solid #333333;
+    margin:5px 0px 5px 0px;
+    padding:5px;
+    border:1px solid #cccccc;
+	text-align:center;
+    -webkit-border-radius: 5px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc));
+}
+.movepicnik * {
+    vertical-align:middle;
+}
+.movepicnik:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e2eef7));
+    cursor: pointer;
+}
+
+
+</style>
+</head>
+
+<body>
+<div>
+    <div>
+        <div class="label">extension</div>
+        <div class="value">
+           <select id="ext">
+                <option value="png">png</option>
+                <option value="jpg">jpg</option>
+            </select>
+        </div>
+        <div id="qlabel">jpg quality</div>
+        <div class="value">
+            <select id="quality">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+    </div>
+    <div id="sendbutton">
+        <div class='popupItem selectableItem'>
+            <span id="send_to_picnik">
+                <img src="icon_32x32.png">
+                send screenshots
+            </span>
+        </div>
+    </div>
+    <div class="movepicnik">
+        <div>
+            <img src="picmonkey_16x16.png"> moving to PicMonkey
+        </div>
+    </div>
+    <div id="err"></div>
+</div>
+</body>
+</html>
+

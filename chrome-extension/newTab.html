@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script type="text/javascript" src="jquery.1.7.js"></script>
+<script type="text/javascript" src="newTab.js"></script>
+<style type="text/css" media="screen">
+	form {
+		display:none;
+	}
+	div {
+		position:absolute;
+		top:45%;
+		width:100%;
+		text-align:center;
+		color:#666;
+	}
+	div img {
+		vertical-align:middle;
+	}
+</style>
+</head>
+<body>
+
+<div><img src="loading.gif"> moving to PicMonkey. please wait...</div>
+
+<form method="post" action="http://www.picmonkey.com/service/" enctype='multipart/form-data'>
+	<input type="text" name="_apikey" value="">
+	<input type="text" name="_export" value="">
+	<input type="text" name="_export_agent" value="browser">
+	<input type="text" name="_export_method" value="POST">
+	<input type="text" name="_out_format" value="">
+	<input type="text" name="_out_quality" value="">
+</form>  
+
+</body>
+</html>
